@@ -31,5 +31,3 @@ fields:
     - Nichlas W. Andersen
   label: Author
   default: ''
-pages:
-- journal/macos-development-environment.md
