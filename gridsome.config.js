@@ -2,10 +2,11 @@
 // Learn more: https://gridsome.org/docs/config
 
 module.exports = {
-  siteName: "Nichlas W. Andersen",
+  siteName: "Up & Above",
   siteUrl: `https://www.itsnwa.com`,
-  titleTemplate: "%s - NWA",
-  siteDescription: "Creative technologist",
+  titleTemplate: "%s - Up & Above",
+  siteDescription:
+    "Innovative company specialized on the UAV aircraft and drone development",
   plugins: [
     {
       use: "@gridsome/source-filesystem",
