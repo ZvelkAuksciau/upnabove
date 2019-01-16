@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
-    <h1 class="hero-title" v-html="settings.hero_title"/>
-    <h2 class="hero-subtitle" v-html="settings.hero_subtitle"/>
+    <h1 class="hero-title">{{settings.hero_title}}</h1>
+    <h2 class="hero-subtitle">{{settings.hero_subtitle}}</h2>
   </div>
 </template>
 

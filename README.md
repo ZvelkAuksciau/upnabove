@@ -3,7 +3,6 @@
   <h3 align="center">Up & Above website</h3>
 </p>
 
-
 ## Development
 
 ```bash
@@ -13,10 +12,12 @@ npm install --global @gridsome/cli
 # cd into the project directory
 cd upnabove
 
+# install dependencies
+npm install
+
 # Start local dev server
 gridsome develop
 ```
-
 
 ## Forestry (Content Management)
 
