@@ -1,7 +1,7 @@
 ---
 thumbnail: "/uploads/cody-davis-253925-unsplash.jpg"
 title: Pineapple
-date: 2019-01-03 23:00:00 +0000
+date: 2019-01-02 23:00:00 +0000
 categories:
 - photography
 project_bg_color: "#EDEDED"
