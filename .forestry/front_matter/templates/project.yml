@@ -17,8 +17,8 @@ fields:
   label: Date
   config:
     required: true
-    time_format: " HH:mm"
-    date_format: YYYY-MM-DD
+    time_format: ''
+    date_format: ''
 - type: tag_list
   name: categories
   label: Categories
