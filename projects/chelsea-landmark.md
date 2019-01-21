@@ -1,9 +1,9 @@
 ---
 date: 2019-01-03 23:00:00 +0000
 year: 2019
-title: Banana
+title: Suopis - 4
 category: Identity
-thumbnail: "/uploads/mike-dorner-173502-unsplash.jpg"
+thumbnail: "/uploads/Suopis2.png"
 categories:
 - photography
 project_bg_color: ''
