@@ -24,6 +24,7 @@ fields:
   label: Categories
   default:
   - none
+  description: Required. Set first value to "none" to hide categories.
 - type: color
   name: project_bg_color
   config:
