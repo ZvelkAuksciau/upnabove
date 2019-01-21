@@ -32,8 +32,10 @@ fields:
   name: dark_mode
   label: Dark mode
 - type: field_group_list
-  name: blob_color_pool
-  label: Blob color pool
+  name: blobs_color_pool
+  label: Blobs color pool
+  config:
+    min: '3'
   fields:
   - type: color
     name: color
