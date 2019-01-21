@@ -3,7 +3,7 @@
 
 module.exports = {
   siteName: "Up & Above",
-  siteUrl: `https://www.itsnwa.com`,
+  siteUrl: `https://upnabove.com`,
   titleTemplate: "%s - Up & Above",
   siteDescription:
     "Innovative company specialized on the UAV aircraft and drone development",

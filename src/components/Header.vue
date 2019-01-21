@@ -1,83 +1,79 @@
 <template>
-    <header class="header" :class="{sticky: $route.path === '/' || $route.path.includes('/projects/')}">
-        <div class="container">
-            <div class="left">
-                <g-link :to="{ name: 'home' }" class="home-link">
-                    <img 
-                        src="../../static/logo.svg"
-                        :alt="settings.site_name" 
-                        class="logo"
-                    />
-                </g-link>
-            </div>
-            <nav class="nav right">
-                <g-link class="nav__link" :to="{ name: 'journal' }">Journal</g-link>
-                <g-link class="nav__link" :to="{ name: 'contact' }">Say Hi!</g-link>
-            </nav>
-        </div>
-    </header>
+  <header class="header">
+    <div class="container">
+      <div>
+        <g-link :to="{ name: 'home' }" class="home-link">
+          <img src="/logo.svg" :alt="settings.site_name" class="logo">
+        </g-link>
+      </div>
+      <nav class="nav">
+        <g-link class="nav__link" :to="{ name: 'contact' }">Contact</g-link>
+      </nav>
+    </div>
+  </header>
 </template>
 
 <script>
 export default {
   data() {
     return {
-        logo: require("../../static/logo.svg"),
-        settings: require("../../data/theme.json")
-    }
+      settings: require("../../data/theme.json")
+    };
   }
-}
+};
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .header {
-    position: relative;
-    height: 6rem;
-    z-index: 10;
-}
-.header.sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-.header > .container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6rem;
+  z-index: 10;
+  padding: 0 1rem;
+
+  & > .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100%;
+  }
 }
-.home-link {
-    text-decoration: none;
-}
+
 .logo {
-    height: 1.5rem;
+  height: 2.5rem;
 }
-.site-name {
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-decoration: none;
-    text-transform: uppercase;   
-}
-.nav > * {
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    margin-top: 4px;
-    margin-right: 3rem;
-    padding-bottom: 4px;
-    border-bottom: 1px solid;
-    border-color: transparent;
-    transition: border 0.15s;
-}
-.nav > *:last-of-type {
+
+.nav__link {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 4px;
+  margin-right: 3rem;
+  padding-bottom: 4px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    transition: 0.2s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  &:last-of-type {
     margin: 0;
-}
-.nav > *:hover {
-    border-color: inherit;
-}
-.nav > .active {
-    border-color: inherit;
+  }
+
+  &:hover::after,
+  &.active::after {
+    transform: scaleX(1);
+  }
 }
 </style>
