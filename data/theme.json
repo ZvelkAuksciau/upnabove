@@ -4,5 +4,16 @@
   "site_name": "Up & Above",
   "site_description": "Innovative company specialized on the UAV aircraft and drone development",
   "hero_title": "Up & Above",
-  "hero_subtitle": "Innovative company specialized on the UAV aircraft and drone development"
+  "hero_subtitle": "Innovative company specialized on the UAV aircraft and drone development",
+  "blobs_color_pool": [
+    {
+      "color": "#DC1515"
+    },
+    {
+      "color": "#760C0C"
+    },
+    {
+      "color": "#9013FE"
+    }
+  ]
 }
