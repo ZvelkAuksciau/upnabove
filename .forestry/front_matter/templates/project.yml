@@ -22,6 +22,8 @@ fields:
 - type: tag_list
   name: categories
   label: Categories
+  default:
+  - none
 - type: color
   name: project_bg_color
   config:
