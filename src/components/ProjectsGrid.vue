@@ -3,7 +3,7 @@
     <div class="project" v-for="item in projects" :key="item.node.id">
       <g-link :to="item.node.path" class="project-link">
         <div class="project-image">
-          <Blob class="project-blob"/>
+          <Blob class="project-blob" :colorPool="$static.data.blobsColorPool"/>
           <g-image :src="item.node.thumbnail" :alt="item.node.title" class="thumbnail"/>
         </div>
         <h3 class="project-title">{{ item.node.title }}</h3>
@@ -34,6 +34,16 @@ export default {
   }
 };
 </script>
+
+<static-query>
+query ColorPool {
+  data(path: "/data/theme") {
+    blobsColorPool {
+      color
+    }
+  }
+}
+</static-query>
 
 <style lang="scss" scoped>
 .projects {

@@ -30,7 +30,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  metaInfo() {
+    return {
+      title: "About"
+    };
+  }
+};
 </script>
 
 <style scoped>

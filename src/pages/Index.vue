@@ -1,8 +1,8 @@
 <template>
   <Layout>
     <div class="container">
-      <Hero />
-      <ProjectsGrid :projects="$page.projects.edges" />
+      <Hero/>
+      <ProjectsGrid :projects="$page.projects.edges"/>
     </div>
   </Layout>
 </template>
@@ -25,13 +25,18 @@ query Posts {
 </page-query>
 
 <script>
-import Hero from "@/components/Hero"
-import ProjectsGrid from "@/components/ProjectsGrid"
+import Hero from "@/components/Hero";
+import ProjectsGrid from "@/components/ProjectsGrid";
 
 export default {
+  metaInfo() {
+    return {
+      title: "Home"
+    };
+  },
   components: {
     Hero,
     ProjectsGrid
   }
-}
+};
 </script>

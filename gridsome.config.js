@@ -19,6 +19,13 @@ module.exports = {
           externalLinksRel: ["nofollow", "noopener", "noreferrer"]
         }
       }
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "data/**/*.json",
+        typeName: "Data"
+      }
     }
   ],
   transformers: {
