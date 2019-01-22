@@ -35,7 +35,7 @@ fields:
   name: blobs_color_pool
   label: Blobs color pool
   config:
-    min: '3'
+    min: '5'
   fields:
   - type: color
     name: color
