@@ -41,6 +41,7 @@ fields:
     name: color
     config:
       color_format: Hex
+      required: true
     label: Color
 pages:
 - data/theme.json
