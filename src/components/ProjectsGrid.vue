@@ -2,9 +2,12 @@
   <div class="projects">
     <div class="project" v-for="item in projects" :key="item.node.id">
       <g-link :to="item.node.path" class="project-link">
-        <g-image :src="item.node.thumbnail" :alt="item.node.title" class="thumbnail"/>
+        <div class="project-image">
+          <Blob class="project-blob"/>
+          <g-image :src="item.node.thumbnail" :alt="item.node.title" class="thumbnail"/>
+        </div>
         <h3 class="project-title">{{ item.node.title }}</h3>
-        <div class="categories">
+        <div class="categories" v-if="item.node.categories[0] != 'none'">
           <span
             class="category"
             v-for="(item, index) in item.node.categories"
@@ -17,7 +20,12 @@
 </template>
 
 <script>
+import Blob from "@/components/Blob";
+
 export default {
+  components: {
+    Blob
+  },
   props: {
     projects: {
       type: Array,
@@ -27,24 +35,45 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .projects {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 4rem;
+  grid-gap: 6rem 4rem;
 }
+
 .project {
   grid-column: auto / span 2;
   text-align: center;
 }
+
 .project-link {
   text-decoration: none;
 }
+
+.project-image {
+  position: relative;
+}
+
+.project-blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 40vw;
+  height: 40vw;
+  max-width: 40vh;
+  max-height: 40vh;
+}
+
 .thumbnail {
-  height: 560px;
-  object-fit: cover;
+  height: 300px;
+  object-fit: contain;
   transition: all 0.15s ease;
-  box-shadow: 0 0 40px -20px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  position: relative;
 }
 .project-title {
   font-size: 1.4rem;
@@ -62,16 +91,22 @@ export default {
   margin: 0;
 }
 .project:hover .thumbnail {
-  transform: scale(1.02);
-  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
 }
 
 @media (min-width: 920px) {
   .project {
     grid-column: auto / span 1;
+    .thumbnail {
+      padding: 0 30px;
+      height: 400px;
+    }
   }
   .project:nth-child(3n + 1) {
     grid-column: auto / span 2;
+    .thumbnail {
+      padding: 0 60px;
+    }
   }
 }
 </style>
