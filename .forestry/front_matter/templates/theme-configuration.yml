@@ -43,5 +43,6 @@ fields:
       color_format: Hex
       required: true
     label: Color
+  description: Minimum 5
 pages:
 - data/theme.json
