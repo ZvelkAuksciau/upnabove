@@ -7,19 +7,31 @@
   "hero_subtitle": "Innovative company specialized on the UAV aircraft and drone development",
   "blobs_color_pool": [
     {
-      "color": "#417505"
+      "color": "#5DA271"
     },
     {
-      "color": "#9013FE"
+      "color": "#FCD581"
     },
     {
-      "color": "#DC1515"
+      "color": "#241E4E"
     },
     {
-      "color": "#760C0C"
+      "color": "#EC5766"
     },
     {
-      "color": "#9013FE"
+      "color": "#2B4162"
+    },
+    {
+      "color": "#780116"
+    },
+    {
+      "color": "#FBAF40"
+    },
+    {
+      "color": "#F6941E"
+    },
+    {
+      "color": "#EF3F37"
     }
   ]
 }
