@@ -18,13 +18,13 @@ sections:
   path: data/homepage.json
   label: Homepage
 - type: document
-  path: data/projects.json
+  path: data/projectPage.json
   label: Project page
 - type: document
-  path: data/products.json
+  path: data/productPage.json
   label: Products page
 - type: document
-  path: data/contact.json
+  path: data/contactPage.json
   label: Contact page
 upload_dir: uploads
 public_path: "/uploads"
