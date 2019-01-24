@@ -6,6 +6,7 @@ category: Identity
 thumbnail: "/uploads/Suopis2.png"
 categories:
 - photography
+- UAV
 project_bg_color: ''
 project_fg_color: ''
 
