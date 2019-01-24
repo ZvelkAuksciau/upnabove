@@ -3,8 +3,7 @@ label: Homepage
 hide_body: true
 is_partial: false
 fields:
-- type: blocks
+- type: include
   name: hero
   label: Hero
-  template_types:
-  - hero
+  template: hero
