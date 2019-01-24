@@ -1,0 +1,9 @@
+---
+label: Project page
+hide_body: true
+is_partial: false
+fields:
+- type: include
+  template: hero
+  label: Hero
+  name: hero
