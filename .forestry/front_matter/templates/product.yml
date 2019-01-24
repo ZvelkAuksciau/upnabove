@@ -1,0 +1,12 @@
+---
+label: Product
+hide_body: false
+is_partial: false
+fields:
+- type: include
+  name: product
+  label: Product
+  template: project
+- type: number
+  name: price
+  label: Price
