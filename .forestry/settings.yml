@@ -20,15 +20,12 @@ sections:
 - type: document
   path: data/projects.json
   label: Project page
-  match: "**/*"
 - type: document
   path: data/products.json
   label: Products page
-  match: "**/*"
 - type: document
   path: data/contact.json
   label: Contact page
-  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
