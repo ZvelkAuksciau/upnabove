@@ -11,6 +11,7 @@ fields:
   name: hero_subtitle
   label: Hero subtitle
   config:
-    wysiwyg: true
+    wysiwyg: false
     schema:
       format: markdown
+- type: field_group
