@@ -1,19 +1,13 @@
 <template>
   <div class="hero">
-    <h1 class="hero-title">{{settings.hero_title}}</h1>
-    <h2 class="hero-subtitle">{{settings.hero_subtitle}}</h2>
+    <h1 class="hero-title">
+      <slot name="title"></slot>
+    </h1>
+    <h2 class="hero-subtitle">
+      <slot name="subtitle"></slot>
+    </h2>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      settings: require("../../data/theme.json")
-    };
-  }
-};
-</script>
 
 <style>
 .hero {
@@ -30,11 +24,7 @@ export default {
   padding: 0;
   margin: 0 0 2rem 0;
 }
-.hero-title p,
-.hero-subtitle p {
-  margin: 0;
-  padding: 0;
-}
+
 .hero-subtitle {
   font-size: 1.15em;
   font-weight: 400;
