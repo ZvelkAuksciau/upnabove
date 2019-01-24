@@ -8,12 +8,21 @@ sections:
   path: projects
   label: Projects
   create: documents
-  match: "**/*.md"
+  match: "**/*"
   templates:
   - project
+- type: directory
+  path: products
+  label: Products
+  create: documents
+  match: "**/*"
+  templates:
+  - product
 - type: document
   path: data/theme.json
   label: Theme config
+- type: heading
+  label: Pages
 - type: document
   path: data/homepage.json
   label: Homepage
