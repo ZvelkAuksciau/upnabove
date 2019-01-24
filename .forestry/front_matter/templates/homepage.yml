@@ -1,0 +1,10 @@
+---
+label: Homepage
+hide_body: false
+is_partial: false
+fields:
+- type: blocks
+  name: hero
+  label: Hero
+  template_types:
+  - hero
