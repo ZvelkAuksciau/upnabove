@@ -1,0 +1,16 @@
+// Transitions
+// -------------------------
+
+$easing--standard: cubic-bezier(0.4, 0, 0.2, 1);
+$easing--decelerate: cubic-bezier(0, 0, 0.2, 1);
+$easing--accelerate: cubic-bezier(0.4, 0, 1, 1);
+
+// Responsive breakpoints
+// -------------------------
+$breakpoints: (
+  xsmall: 400px,
+  small: 640px,
+  medium: 960px,
+  large: 1200px,
+  xlarge: 1600px
+);
