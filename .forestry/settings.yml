@@ -4,6 +4,13 @@ auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
 sections:
+- type: directory
+  path: testing
+  label: testing
+  create: documents
+  match: "**/*"
+  templates:
+  - homepage
 - type: document
   path: data/test.json
   label: test
