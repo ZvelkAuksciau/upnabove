@@ -10,3 +10,5 @@ fields:
 - type: number
   name: price
   label: Price
+pages:
+- products/rambynas.md
