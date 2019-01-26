@@ -3,13 +3,13 @@ label: Product
 hide_body: false
 is_partial: false
 fields:
+- type: number
+  name: price
+  label: Price
 - type: include
   name: product
   label: Product
   template: project
-- type: number
-  name: price
-  label: Price
 pages:
 - products/rambynas.md
 - products/rambynas-2.md
