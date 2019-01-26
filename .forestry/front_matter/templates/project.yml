@@ -7,6 +7,9 @@ fields:
   name: thumbnail
   label: Thumbnail
   description: This will only show up on the front page
+- type: boolean
+  name: cover
+  label: Stretch thumbnail
 - type: text
   name: title
   label: Title
