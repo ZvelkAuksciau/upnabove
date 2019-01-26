@@ -1,10 +1,10 @@
 <template>
   <Layout>
-    <div class="project">
+    <div class="product">
       <div class="container">
-        <div class="project-header">
-          <h1 class="project-title">{{ $page.post.title }}</h1>
-          <div class="project-info">
+        <div class="product-header">
+          <h1 class="product-title">{{ $page.post.title }}</h1>
+          <div class="product-info">
             <div v-if="$page.post.categories[0] != 'none'" class="categories-container">
               <div class="categories">
                 <span class="label">Categories</span>
@@ -20,6 +20,11 @@
               <span class="label">Year</span>
               <span>{{ $page.post.date }}</span>
             </div>
+
+            <div class="price-container">
+              <span class="label">Price</span>
+              <span>€{{ $page.post.price }}</span>
+            </div>
           </div>
         </div>
         <div v-html="$page.post.content" class="content"/>
@@ -30,8 +35,9 @@
 
 <page-query>
 query ($path: String!) {
-  post: projectPost (path: $path) {
+  post: productPost (path: $path) {
     title
+    price
     date (format: "YYYY")
     content
     categories
@@ -63,29 +69,29 @@ export default {
 </script>
 
 <style scoped>
-.project-header {
+.product-header {
   padding: 20vh 0 4rem 0;
 }
-.project-title {
+.product-title {
   font-size: 4rem;
   margin: 0 0 4rem 0;
   padding: 0;
 }
-.project-info {
+.product-info {
   display: flex;
   flex-wrap: wrap;
   font-size: 0.8rem;
 }
-.project-info > div {
+.product-info > div {
   margin-right: 4rem;
 }
-.project-info > div:last-of-type {
+.product-info > div:last-of-type {
   margin: 0;
 }
-.category:after {
+.product:after {
   content: ", ";
 }
-.category:last-of-type:after {
+.product:last-of-type:after {
   content: "";
 }
 </style>

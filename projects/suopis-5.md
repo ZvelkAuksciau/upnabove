@@ -6,6 +6,7 @@ categories:
   - photography
 bg_color: ""
 fg_color: "#FDC70D"
+cover: false
 ---
 
 ![](/uploads/ian-dooley-281897-unsplash.jpg)

@@ -6,4 +6,5 @@ categories:
   - none
 bg_color: ""
 fg_color: ""
+cover: false
 ---

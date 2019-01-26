@@ -1,19 +1,20 @@
 <template>
-  <div class="projects">
-    <div class="project" v-for="item in projects" :key="item.node.id">
-      <g-link :to="item.node.path" class="project-link">
-        <div class="project-image">
-          <Blob class="project-blob" :colorPool="$static.data.blobsColorPool"/>
+  <div class="items">
+    <div class="item" v-for="item in items" :key="item.node.id">
+      <g-link :to="item.node.path" class="item-link">
+        <div class="item-image">
+          <Blob v-if="!item.node.cover" class="item-blob" :colorPool="$static.data.blobsColorPool"/>
           <g-image :src="item.node.thumbnail" :alt="item.node.title" class="thumbnail"/>
         </div>
-        <h3 class="project-title">{{ item.node.title }}</h3>
+        <h3 class="item-title">{{ item.node.title }}</h3>
         <div class="categories" v-if="item.node.categories[0] != 'none'">
           <span
             class="category"
-            v-for="(item, index) in item.node.categories"
+            v-for="(category, index) in item.node.categories"
             :key="index"
-          >{{ item }}</span>
+          >{{ category }}</span>
         </div>
+        <span class="price" v-if="item.node.price">€{{ item.node.price }}</span>
       </g-link>
     </div>
   </div>
@@ -27,7 +28,7 @@ export default {
     Blob
   },
   props: {
-    projects: {
+    items: {
       type: Array,
       required: true
     }
@@ -46,26 +47,26 @@ query ColorPool {
 </static-query>
 
 <style lang="scss" scoped>
-.projects {
+.items {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 6rem 4rem;
 }
 
-.project {
+.item {
   grid-column: auto / span 2;
   text-align: center;
 }
 
-.project-link {
+.item-link {
   text-decoration: none;
 }
 
-.project-image {
+.item-image {
   position: relative;
 }
 
-.project-blob {
+.item-blob {
   position: absolute;
   top: 0;
   left: 0;
@@ -79,13 +80,17 @@ query ColorPool {
 }
 
 .thumbnail {
-  height: 300px;
+  height: 350px;
   object-fit: contain;
   transition: all 0.15s ease;
   z-index: 1;
   position: relative;
+
+  &.cover {
+    object-fit: cover;
+  }
 }
-.project-title {
+.item-title {
   font-size: 1.4rem;
   color: var(--color-contrast);
   margin: 2rem 0 1rem 0;
@@ -93,26 +98,33 @@ query ColorPool {
 .categories {
   font-size: 0.8rem;
   color: var(--color-contrast-1);
+  margin-bottom: 1rem;
 }
 .category {
   margin-right: 0.8rem;
 }
 .category:last-of-type {
+  position: relative;
   margin: 0;
 }
+
+.price {
+  color: var(--color-contrast-1);
+}
+
 .project:hover .thumbnail {
   transform: scale(1.05);
 }
 
 @media (min-width: 920px) {
-  .project {
+  .item {
     grid-column: auto / span 1;
     .thumbnail {
       padding: 0 30px;
       height: 400px;
     }
   }
-  .project:nth-child(3n + 1) {
+  .item:nth-child(3n + 1) {
     grid-column: auto / span 2;
     .thumbnail {
       padding: 0 60px;

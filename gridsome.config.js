@@ -23,6 +23,18 @@ module.exports = {
     {
       use: "@gridsome/source-filesystem",
       options: {
+        path: "products/**/*.md",
+        typeName: "ProductPost",
+        resolveAbsolutePaths: true,
+        remark: {
+          externalLinksTarget: "_blank",
+          externalLinksRel: ["nofollow", "noopener", "noreferrer"]
+        }
+      }
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
         path: "data/**/*.json",
         typeName: "Data"
       }

@@ -3,10 +3,11 @@
     <div class="container">
       <div>
         <g-link :to="{ name: 'home' }" class="home-link">
-          <img src="/logo.svg" :alt="settings.site_name" class="logo">
+          <img src="/logo.svg" :alt="$static.data.siteName" class="logo">
         </g-link>
       </div>
       <nav class="nav">
+        <g-link class="nav__link" :to="{ name: 'products' }">Products</g-link>
         <g-link class="nav__link" :to="{ name: 'projects' }">Projects</g-link>
         <g-link class="nav__link" :to="{ name: 'contact' }">Contact</g-link>
       </nav>
@@ -14,15 +15,13 @@
   </header>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      settings: require("../../data/theme.json")
-    };
+<static-query>
+{
+  data(path:"/data/theme") {
+    siteName
   }
-};
-</script>
+}
+</static-query>
 
 <style lang="scss" scoped>
 .header {
@@ -33,13 +32,13 @@ export default {
   height: 6rem;
   z-index: 10;
   padding: 0 1rem;
+}
 
-  & > .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-  }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .logo {

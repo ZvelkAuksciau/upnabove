@@ -6,6 +6,7 @@ categories:
   - photography
 bg_color: "#EDEDED"
 fg_color: "#36B5EF"
+cover: false
 ---
 
 ![](/uploads/cody-davis-253925-unsplash.jpg)

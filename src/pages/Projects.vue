@@ -5,7 +5,7 @@
         <template slot="title">{{ $page.data.heroTitle }}</template>
         <template slot="subtitle">{{ $page.data.heroSubtitle }}</template>
       </Hero>
-      <ProjectsGrid :projects="$page.projects.edges"/>
+      <ItemGrid :items="$page.projects.edges"/>
     </div>
   </Layout>
 </template>
@@ -24,6 +24,7 @@
         title
         categories
         thumbnail (quality: 90)
+        cover
         path
       }
     }
@@ -33,7 +34,7 @@
 
 <script>
 import Hero from "@/components/Hero";
-import ProjectsGrid from "@/components/ProjectsGrid";
+import ItemGrid from "@/components/ItemGrid";
 
 export default {
   metaInfo() {
@@ -43,7 +44,7 @@ export default {
   },
   components: {
     Hero,
-    ProjectsGrid
+    ItemGrid
   }
 };
 </script>
