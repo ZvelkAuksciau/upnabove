@@ -29,12 +29,12 @@ fields:
   - none
   description: Required. Set first value to "none" to hide categories.
 - type: color
-  name: project_bg_color
+  name: bg_color
   config:
     color_format: Hex
   label: Background color
 - type: color
-  name: project_fg_color
+  name: fg_color
   config:
     color_format: Hex
   label: Foreground color
