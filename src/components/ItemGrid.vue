@@ -4,7 +4,12 @@
       <g-link :to="item.node.path" class="item-link">
         <div class="item-image">
           <Blob v-if="!item.node.cover" class="item-blob" :colorPool="$static.data.blobsColorPool"/>
-          <g-image :src="item.node.thumbnail" :alt="item.node.title" class="thumbnail"/>
+          <g-image
+            :src="item.node.thumbnail"
+            :alt="item.node.title"
+            :class="{ cover: item.node.cover }"
+            class="thumbnail"
+          />
         </div>
         <h3 class="item-title">{{ item.node.title }}</h3>
         <div class="categories" v-if="item.node.categories[0] != 'none'">
