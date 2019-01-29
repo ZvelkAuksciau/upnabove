@@ -1,0 +1,9 @@
+---
+label: Product page
+hide_body: false
+is_partial: false
+fields:
+- type: include
+  name: hero
+  label: Hero
+  template: hero
