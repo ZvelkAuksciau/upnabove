@@ -31,7 +31,7 @@ sections:
   label: Project page
 - type: document
   path: data/product-page.json
-  label: Products page
+  label: Product page
 - type: document
   path: data/contact-page.json
   label: Contact page
