@@ -10,9 +10,6 @@ fields:
   name: product
   label: Product
   template: project
-- type: datetime
-  name: test
-  label: test
 pages:
 - products/rambynas.md
 - products/rambynas-2.md
