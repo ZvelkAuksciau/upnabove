@@ -20,8 +20,6 @@ fields:
   label: Date
   config:
     required: true
-    time_format: ''
-    date_format: ''
 - type: tag_list
   name: categories
   label: Categories
