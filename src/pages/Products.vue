@@ -5,7 +5,7 @@
         <template slot="title">{{ $page.data.heroTitle }}</template>
         <template slot="subtitle">{{ $page.data.heroSubtitle }}</template>
       </Hero>
-      <ItemGrid :items="$page.projects.edges"/>
+      <ItemGrid :items="$page.products.edges"/>
     </div>
   </Layout>
 </template>
@@ -16,11 +16,11 @@
     heroTitle
     heroSubtitle
   }
-	projects: allProductPost {
+	products: allProductPost {
     edges {
       node {
         id
-        date (format: "D. MMMM YYYY")
+        date (format: "YYYY MM DD")
         title
         price
         categories
@@ -29,7 +29,7 @@
         path
       }
     }
-  },
+  }
 }
 </page-query>
 

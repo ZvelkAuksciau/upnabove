@@ -20,7 +20,7 @@
     edges {
       node {
         id
-        date (format: "D. MMMM YYYY")
+        date (format: "YYYY MM DD")
         title
         categories
         thumbnail (quality: 90)
@@ -28,7 +28,7 @@
         path
       }
     }
-  },
+  }
 }
 </page-query>
 
