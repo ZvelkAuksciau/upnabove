@@ -24,25 +24,32 @@
 </static-query>
 
 <style lang="scss" scoped>
+@import "~/assets/scss/variables.scss";
+@import "~/assets/scss/mixins.scss";
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 6rem;
   z-index: 10;
-  padding: 0 1rem;
-}
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(2px);
 
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .logo {
   height: 2.5rem;
+  margin: 0.5rem;
+}
+
+.nav {
+  margin-bottom: 0.5rem;
 }
 
 .nav__link {
@@ -50,9 +57,8 @@
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
-  margin-top: 4px;
-  margin-right: 3rem;
-  padding-bottom: 4px;
+  margin-right: 2rem;
+  padding: 4px;
 
   &::after {
     content: "";
@@ -74,6 +80,26 @@
   &:hover::after,
   &.active::after {
     transform: scaleX(1);
+  }
+}
+
+@include small {
+  .header {
+    padding: 0 1rem;
+    height: 6rem;
+    background-color: initial;
+    backdrop-filter: initial;
+
+    .container {
+      flex-direction: row;
+      justify-content: space-between;
+      height: 100%;
+    }
+  }
+
+  .logo,
+  .nav {
+    margin: 0;
   }
 }
 </style>

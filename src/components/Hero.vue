@@ -9,13 +9,16 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
+@import "~/assets/scss/variables.scss";
+@import "~/assets/scss/mixins.scss";
+
 .hero {
   text-align: center;
   width: 480px;
   max-width: 100%;
   margin: 0 auto;
-  padding: 4rem 0 8rem 0;
+  padding: 4rem 0 2rem;
 }
 
 .hero-title {
@@ -32,5 +35,11 @@
   padding: 0;
   margin: 0;
   opacity: 0.6;
+}
+
+@include small {
+  .hero {
+    padding: 4rem 0 8rem;
+  }
 }
 </style>
