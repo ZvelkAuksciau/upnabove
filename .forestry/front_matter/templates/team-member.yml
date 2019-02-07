@@ -4,8 +4,8 @@ hide_body: true
 is_partial: false
 fields:
 - type: text
-  name: name
-  label: Name
+  name: title
+  label: Title
   config:
     required: true
 - type: file
