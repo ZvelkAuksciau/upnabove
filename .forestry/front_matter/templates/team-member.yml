@@ -11,5 +11,3 @@ fields:
   label: Name
   config:
     required: true
-pages:
-- team/bananas-bananauskas.md
