@@ -11,3 +11,5 @@ fields:
 - type: file
   name: image
   label: Image
+pages:
+- team/bananas-bananauskas.md
