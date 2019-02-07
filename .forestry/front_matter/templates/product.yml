@@ -11,6 +11,7 @@ fields:
   label: Product
   template: project
 pages:
+- products/ida-jiafjsidf.md
 - products/rambynas.md
 - products/rambynas-2.md
 - products/banana.md
