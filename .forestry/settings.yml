@@ -18,6 +18,13 @@ sections:
   match: "**/*"
   templates:
   - product
+- type: directory
+  path: team
+  label: Team
+  create: documents
+  match: "**/*"
+  templates:
+  - team-member
 - type: document
   path: data/theme.json
   label: Theme config
