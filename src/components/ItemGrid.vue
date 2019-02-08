@@ -3,7 +3,13 @@
     <div class="item" v-for="item in items" :key="item.node.id">
       <g-link :to="item.node.path" class="item-link">
         <div class="item-image">
-          <Blob v-if="!item.node.cover" class="item-blob" :colorPool="$static.data.blobsColorPool"/>
+          <Blob
+            v-if="!item.node.cover"
+            class="item-blob"
+            animateShade
+            animateMovement
+            :colorPool="$static.data.blobsColorPool"
+          />
           <g-image
             :src="item.node.thumbnail"
             :alt="item.node.title"

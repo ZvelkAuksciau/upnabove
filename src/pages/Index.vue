@@ -6,6 +6,10 @@
         <template slot="subtitle">{{ $page.data.heroSubtitle }}</template>
       </Hero>
       <ItemGrid :items="posts"/>
+      <Hero>
+        <template slot="title">Team</template>
+      </Hero>
+      <BlobGrid :items="$page.team.edges"/>
     </div>
   </Layout>
 </template>
@@ -44,12 +48,22 @@
       }
     }
   }
+  team: allTeamMember {
+    edges {
+      node {
+        id
+        title
+        image (quality: 90)
+      }
+    }
+  }
 }
 </page-query>
 
 <script>
 import Hero from "@/components/Hero";
 import ItemGrid from "@/components/ItemGrid";
+import BlobGrid from "@/components/BlobGrid";
 
 export default {
   metaInfo() {
@@ -59,7 +73,8 @@ export default {
   },
   components: {
     Hero,
-    ItemGrid
+    ItemGrid,
+    BlobGrid
   },
   computed: {
     posts() {
