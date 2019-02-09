@@ -7,3 +7,5 @@ fields:
   label: Hero
   name: hero
   template: hero
+pages:
+- data/contact-page.json
