@@ -13,6 +13,7 @@
           <g-image
             :src="item.node.thumbnail"
             :alt="item.node.title"
+            :key="item.node.id"
             :class="{ cover: item.node.cover }"
             class="thumbnail"
           />

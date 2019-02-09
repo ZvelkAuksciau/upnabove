@@ -40,7 +40,7 @@ import ItemGrid from "@/components/ItemGrid";
 export default {
   metaInfo() {
     return {
-      title: "Home"
+      title: "Products"
     };
   },
   components: {

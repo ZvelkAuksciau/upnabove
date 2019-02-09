@@ -1,11 +1,14 @@
 <template>
   <div class="items">
     <div class="item" v-for="item in items" :key="item.node.id">
-      <div class="item-image">
-        <Blob class="item-blob">
-          <g-image :src="item.node.image" :alt="item.node.title" class="item-image"/>
-        </Blob>
-      </div>
+      <Blob class="item-blob">
+        <g-image
+          :src="item.node.image"
+          :alt="item.node.title"
+          :key="item.node.id"
+          class="item-image"
+        />
+      </Blob>
       <h3 class="item-title">{{ item.node.title }}</h3>
     </div>
   </div>
@@ -23,23 +26,20 @@ export default {
       type: Array,
       required: true
     }
-  },
-  mounted() {
-    console.log(this.items);
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .items {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 6rem 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .item {
-  grid-column: auto / span 2;
   text-align: center;
+  margin: 0 40px 40px;
 }
 
 .item-image {
@@ -50,10 +50,11 @@ export default {
 
 .item-blob {
   overflow: hidden;
-  width: 40vw;
-  height: 40vw;
-  max-width: 40vh;
-  max-height: 40vh;
+  // width: 40vw;
+  // height: 40vw;
+  // max-width: 40vh;
+  // max-height: 40vh;
+  margin: 0 auto;
   opacity: 1;
 }
 
@@ -65,7 +66,6 @@ export default {
 
 @media (min-width: 920px) {
   .item {
-    grid-column: auto / span 1;
   }
 }
 </style>

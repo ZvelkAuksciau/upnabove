@@ -39,7 +39,7 @@
 
 @include small {
   .hero {
-    padding: 4rem 0 8rem;
+    padding: 4rem 0 4rem;
   }
 }
 </style>
