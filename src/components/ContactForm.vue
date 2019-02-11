@@ -16,24 +16,16 @@
       <textarea name="message"></textarea>
     </div>
 
-    <button class="button">Submit form</button>
+    <button class="button">Send</button>
   </form>
 </template>
 
 <style lang="scss" scoped>
-.sender-info {
-  display: flex;
-  flex-wrap: wrap;
-
-  .row {
-    margin-bottom: 2rem;
-  }
-}
-
 input:focus,
 textarea:focus {
   border-color: var(--color-contrast-1);
 }
+
 input,
 textarea {
   background: transparent;
@@ -45,10 +37,27 @@ textarea {
   font-size: 1rem;
   width: 100%;
 }
+
 textarea {
   resize: none;
   height: 140px;
 }
+
+.contact-form {
+  margin-bottom: 2rem;
+}
+
+.sender-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.message {
+  margin-bottom: 2rem;
+}
+
 .button {
   color: var(--color-base);
   background: var(--color-contrast);
@@ -57,16 +66,21 @@ textarea {
   font-size: 0.8rem;
   padding: 0.8rem 1.6rem;
   border-radius: 0.3rem;
-  margin-top: 2rem;
   cursor: pointer;
   transition: opacity 0.25s ease;
-  font-size: 500;
-  letter-spacing: 0.035em;
 }
+
 .button:hover {
   opacity: 0.6;
 }
+
 .button:focus {
   border: 1px solid var(--color-base-1);
+}
+
+@media (min-width: 920px) {
+  .sender-info {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 </style>
