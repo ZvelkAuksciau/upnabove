@@ -1,5 +1,17 @@
 <template>
-  <form class="contact-form" name="contact" method="POST" @submit.prevent="handleSubmit" data-netlify="true">
+  <form
+    class="contact-form"
+    name="contact"
+    method="POST"
+    @submit.prevent="handleSubmit"
+    netlify-honeypot="bot-field"
+    data-netlify="true"
+  >
+    <p class="hidden">
+      <label>Don’t fill this out if you're human:
+        <input name="bot-field">
+      </label>
+    </p>
     <div class="sender-info">
       <div class="row">
         <label for="name" class="label">Your name</label>
@@ -90,6 +102,10 @@ textarea {
 
 .contact-form {
   margin-bottom: 2rem;
+}
+
+.hidden {
+  display: none;
 }
 
 .sender-info {
