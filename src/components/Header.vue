@@ -50,6 +50,9 @@
 
 .nav {
   margin-bottom: 0.5rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .nav__link {
@@ -57,7 +60,6 @@
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
-  margin-right: 2rem;
   padding: 4px;
 
   &::after {
@@ -95,6 +97,15 @@
       justify-content: space-between;
       height: 100%;
     }
+  }
+
+  .nav {
+    display: block;
+    width: auto;
+  }
+
+  .nav__link {
+    margin-right: 2rem;
   }
 
   .logo,
