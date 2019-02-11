@@ -1,6 +1,7 @@
 import DefaultLayout from "~/layouts/Default.vue";
 import settings from "../data/theme.json";
 import * as VueGoogleMaps from '../node_modules/vue2-google-maps/src/main.js'
+import axios from 'axios'
 
 export default function(Vue, { head, appOptions }) {
   Vue.component("Layout", DefaultLayout);
@@ -14,4 +15,6 @@ export default function(Vue, { head, appOptions }) {
       key: 'AIzaSyA7h3Xc9DVypXH_fd9UscDTjB7yTFJJqqc'
     }
   })
+
+  Vue.prototype.$axios = axios;
 }

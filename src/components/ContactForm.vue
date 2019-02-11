@@ -1,5 +1,5 @@
 <template>
-  <form class="contact-form" name="contact" @submit.prevent="handleSubmit" netlify>
+  <form class="contact-form" name="contact" method="POST" @submit.prevent="handleSubmit" netlify>
     <div class="sender-info">
       <div class="row">
         <label for="name" class="label">Your name</label>
@@ -21,8 +21,6 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   data() {
     return {
@@ -46,7 +44,7 @@ export default {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       };
-      axios
+      this.$axios
         .post(
           "/",
           this.encode({
