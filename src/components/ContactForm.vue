@@ -1,5 +1,5 @@
 <template>
-  <form class="contact-form" name="contact" netlify>
+  <form class="contact-form" name="contact" method="POST" netlify>
     <div class="sender-info">
       <div class="row">
         <label for="name" class="label">Your name</label>
