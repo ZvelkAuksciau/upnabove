@@ -46,9 +46,9 @@ export default {
       };
       this.$axios
         .post(
-          "/contact",
+          "/",
           this.encode({
-            "form-name": "testing",
+            "form-name": "contact",
             ...this.form
           }),
           axiosConfig
