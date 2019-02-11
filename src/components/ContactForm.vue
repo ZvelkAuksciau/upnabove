@@ -1,5 +1,5 @@
 <template>
-  <form class="contact-form" name="contact" method="POST" @submit.prevent="handleSubmit" netlify>
+  <form class="contact-form" name="contact" method="POST" @submit.prevent="handleSubmit" data-netlify="true">
     <div class="sender-info">
       <div class="row">
         <label for="name" class="label">Your name</label>
@@ -46,7 +46,7 @@ export default {
       };
       this.$axios
         .post(
-          "/",
+          "/contact",
           this.encode({
             "form-name": "testing",
             ...this.form
