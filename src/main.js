@@ -1,6 +1,6 @@
 import DefaultLayout from "~/layouts/Default.vue";
 import settings from "../data/theme.json";
-import * as VueGoogleMaps from 'vue2-google-maps'
+import * as VueGoogleMaps from '../node_modules/vue2-google-maps/src/main.js'
 
 export default function(Vue, { head, appOptions }) {
   Vue.component("Layout", DefaultLayout);

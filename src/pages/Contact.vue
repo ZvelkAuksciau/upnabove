@@ -8,15 +8,17 @@
 
       <ContactForm/>
 
-      <GmapMap
-        :center="{lat:54.6547269, lng:25.106417}"
-        :zoom="11"
-        map-type-id="terrain"
-        style="height: 400px"
-        :options="{styles: mapStyle, mapTypeControl: false, streetViewControl: false, fullscreenControl: false}"
-      >
-        <GmapMarker :position="{lat:54.6547269, lng:25.106417}" :clickable="true" @click="openMaps"/>
-      </GmapMap>
+      <ClientOnly>
+        <GmapMap
+          :center="{lat:54.6547269, lng:25.106417}"
+          :zoom="11"
+          map-type-id="terrain"
+          style="height: 400px"
+          :options="{styles: mapStyle, mapTypeControl: false, streetViewControl: false, fullscreenControl: false}"
+        >
+          <GmapMarker :position="{lat:54.6547269, lng:25.106417}" :clickable="true" @click="openMaps"/>
+        </GmapMap>
+      </ClientOnly>
     </div>
   </Layout>
 </template>
