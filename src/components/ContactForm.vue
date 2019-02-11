@@ -1,24 +1,74 @@
 <template>
-  <form class="contact-form" name="contact" method="POST" netlify>
+  <form class="contact-form" name="contact" @submit.prevent="handleSubmit" netlify>
     <div class="sender-info">
       <div class="row">
         <label for="name" class="label">Your name</label>
-        <input type="text" name="name">
+        <input type="text" name="name" v-model="form.name">
       </div>
       <div class="row">
         <label for="email" class="label">Your email</label>
-        <input type="email" name="email">
+        <input type="email" name="email" v-model="form.email">
       </div>
     </div>
 
     <div class="message">
       <label for="message" class="label">Message</label>
-      <textarea name="message"></textarea>
+      <textarea name="message" v-model="form.message"></textarea>
     </div>
 
-    <button class="button">Send</button>
+    <button class="button" type="submit">Send</button>
   </form>
 </template>
+
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      form: {
+        name: "",
+        email: "",
+        message: ""
+      },
+      loading: false
+    };
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
+    handleSubmit() {
+      const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" }
+      };
+      axios
+        .post(
+          "/",
+          this.encode({
+            "form-name": "testing",
+            ...this.form
+          }),
+          axiosConfig
+        )
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
+  },
+  mounted() {
+    console.log(axios);
+  }
+};
+</script>
+
 
 <style lang="scss" scoped>
 input:focus,
