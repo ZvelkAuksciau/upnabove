@@ -62,9 +62,6 @@ export default {
           console.log(err);
         });
     }
-  },
-  mounted() {
-    console.log(axios);
   }
 };
 </script>
