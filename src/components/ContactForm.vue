@@ -1,7 +1,7 @@
 <template>
   <form
     class="contact-form"
-    :class="{ loading: loading }"
+    :class="{ loading: loading, success: success, error: error }"
     name="contact"
     method="POST"
     @submit.prevent="handleSubmit"
@@ -30,8 +30,9 @@
     <button
       class="button"
       type="submit"
+      ref="submitButton"
       :disabled="this.loading"
-    >{{ this.loading ? "Sending..." : "Send"}}</button>
+    >{{ buttonText }}</button>
 
   </form>
 </template>
@@ -49,6 +50,23 @@ export default {
       success: false,
       error: false
     };
+  },
+  computed: {
+    buttonText() {
+      if (this.loading) {
+        return "Sending..."
+      }
+
+      if (this.success) {
+        return "Success!"
+      }
+
+      if (this.error) {
+        return "Error"
+      }
+
+      return "Send"
+    }
   },
   props: {
     pageTitle: {
@@ -85,12 +103,20 @@ export default {
           this.success = true;
 
           console.log(res);
+
+          setTimeout(() => {
+            this.success = false
+          }, 2000)
         })
         .catch(err => {
           this.loading = false;
           this.error = true;
 
           console.log(err);
+
+          setTimeout(() => {
+            this.error = false
+          }, 2000)
         });
     }
   }
@@ -127,6 +153,20 @@ textarea:focus {
   &.loading {
     opacity: 0.5;
   }
+
+  &.error {
+    .button {
+      background-color: var(--color-error);
+      transition-duration: 0.2s;
+    }
+  }
+
+  &.success {
+    .button {
+      background-color: var(--color-success);
+      transition-duration: 0.2s;
+    }
+  }
 }
 
 .hidden {
@@ -153,7 +193,7 @@ textarea:focus {
   padding: 0.8rem 1.6rem;
   border-radius: 0.3rem;
   cursor: pointer;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease, background-color 2s ease;
 }
 
 .button:hover {
