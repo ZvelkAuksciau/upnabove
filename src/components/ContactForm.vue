@@ -1,6 +1,7 @@
 <template>
   <form
     class="contact-form"
+    :class="{ loading: loading }"
     name="contact"
     method="POST"
     @submit.prevent="handleSubmit"
@@ -13,20 +14,25 @@
     <div class="sender-info">
       <div class="row">
         <label for="name" class="label">Your name</label>
-        <input type="text" name="name" v-model="form.name">
+        <input type="text" name="name" v-model="form.name" :disabled="this.loading">
       </div>
       <div class="row">
         <label for="email" class="label">Your email</label>
-        <input type="email" name="email" v-model="form.email">
+        <input type="email" name="email" v-model="form.email" :disabled="this.loading">
       </div>
     </div>
 
     <div class="message">
       <label for="message" class="label">Message</label>
-      <textarea name="message" v-model="form.message"></textarea>
+      <textarea name="message" v-model="form.message" :disabled="this.loading"></textarea>
     </div>
 
-    <button class="button" type="submit">Send</button>
+    <button
+      class="button"
+      type="submit"
+      :disabled="this.loading"
+    >{{ this.loading ? "Sending..." : "Send"}}</button>
+
   </form>
 </template>
 
@@ -39,8 +45,16 @@ export default {
         email: "",
         message: ""
       },
-      loading: false
+      loading: false,
+      success: false,
+      error: false
     };
+  },
+  props: {
+    pageTitle: {
+      type: String,
+      required: true
+    }
   },
   methods: {
     encode(data) {
@@ -51,6 +65,8 @@ export default {
         .join("&");
     },
     handleSubmit() {
+      this.loading = true;
+
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       };
@@ -59,14 +75,21 @@ export default {
           "/",
           this.encode({
             "form-name": "contact",
+            page: this.pageTitle,
             ...this.form
           }),
           axiosConfig
         )
         .then(res => {
+          this.loading = false;
+          this.success = true;
+
           console.log(res);
         })
         .catch(err => {
+          this.loading = false;
+          this.error = true;
+
           console.log(err);
         });
     }
@@ -76,11 +99,6 @@ export default {
 
 
 <style lang="scss" scoped>
-input:focus,
-textarea:focus {
-  border-color: var(--color-contrast-1);
-}
-
 input,
 textarea {
   background: transparent;
@@ -98,8 +116,17 @@ textarea {
   height: 140px;
 }
 
+input:focus,
+textarea:focus {
+  border-color: var(--color-contrast-1);
+}
+
 .contact-form {
   margin-bottom: 2rem;
+
+  &.loading {
+    opacity: 0.5;
+  }
 }
 
 .hidden {

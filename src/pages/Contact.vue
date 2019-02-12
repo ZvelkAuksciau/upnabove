@@ -6,7 +6,7 @@
         <template slot="subtitle">{{ $page.data.heroSubtitle }}</template>
       </Hero>
 
-      <ContactForm/>
+      <ContactForm :pageTitle="$metaInfo.title"/>
 
       <ClientOnly>
         <GmapMap

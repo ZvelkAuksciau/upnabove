@@ -28,6 +28,7 @@
           </div>
         </div>
         <div v-html="$page.post.content" class="content"/>
+        <ContactForm :pageTitle="$metaInfo.title"/> 
       </div>
     </div>
   </Layout>
@@ -48,6 +49,8 @@ query ($path: String!) {
 </page-query>
 
 <script>
+import ContactForm from "@/components/ContactForm";
+
 export default {
   metaInfo() {
     return {
@@ -64,11 +67,18 @@ export default {
         }`
       }
     };
+  },
+  components: {
+    ContactForm
   }
 };
 </script>
 
 <style scoped>
+.content {
+  margin-bottom: 4rem;
+}
+
 .product-header {
   padding: 20vh 0 4rem 0;
 }
