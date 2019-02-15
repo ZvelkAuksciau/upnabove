@@ -14,11 +14,11 @@
     <div class="sender-info">
       <div class="row">
         <label for="name" class="label">Your name</label>
-        <input type="text" name="name" v-model="form.name" :disabled="this.loading">
+        <input type="text" name="name" v-validate="'required|alpha'" v-model="form.name" :disabled="this.loading">
       </div>
       <div class="row">
         <label for="email" class="label">Your email</label>
-        <input type="email" name="email" v-model="form.email" :disabled="this.loading">
+        <input type="email" name="email" v-validate="'required|email'" v-model="form.email" :disabled="this.loading">
       </div>
     </div>
 
@@ -135,6 +135,10 @@ textarea {
   color: inherit;
   font-size: 1rem;
   width: 100%;
+
+  &.touched.invalid {
+    border-color: var(--color-error);
+  }
 }
 
 textarea {

@@ -2,6 +2,7 @@ import DefaultLayout from "~/layouts/Default.vue";
 import settings from "../data/theme.json";
 import * as VueGoogleMaps from '../node_modules/vue2-google-maps/src/main.js'
 import axios from 'axios'
+import VeeValidate from 'vee-validate';
 
 export default function(Vue, { head, appOptions }) {
   Vue.component("Layout", DefaultLayout);
@@ -17,4 +18,8 @@ export default function(Vue, { head, appOptions }) {
   })
 
   Vue.prototype.$axios = axios;
+
+  Vue.use(VeeValidate, {
+    classes: true
+  })
 }

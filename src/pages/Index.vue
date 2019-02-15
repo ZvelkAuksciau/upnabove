@@ -40,7 +40,6 @@
         id
         date
         title
-        price
         categories
         thumbnail (quality: 90)
         cover

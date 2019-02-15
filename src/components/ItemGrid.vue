@@ -26,7 +26,6 @@
             :key="index"
           >{{ category }}</span>
         </div>
-        <span class="price" v-if="item.node.price">€{{ item.node.price }}</span>
       </g-link>
     </div>
   </div>
@@ -118,10 +117,6 @@ query ColorPool {
 .category:last-of-type {
   position: relative;
   margin: 0;
-}
-
-.price {
-  color: var(--color-contrast-1);
 }
 
 .project:hover .thumbnail {

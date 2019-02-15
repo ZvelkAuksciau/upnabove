@@ -3,6 +3,7 @@
     <Header/>
     <slot/>
     <Footer/>
+    <div class="sky"></div>
   </div>
 </template>
 
@@ -55,12 +56,23 @@ h1 {
 
 .layout {
   padding-top: 6rem;
+  position: relative;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+.sky {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom, #82addb 0%,#ebb2b1 100%);
+  z-index: -1;
 }
 
 @media (min-width: 860px) {

@@ -20,11 +20,6 @@
               <span class="label">Year</span>
               <span>{{ $page.post.date }}</span>
             </div>
-
-            <div class="price-container">
-              <span class="label">Price</span>
-              <span>€{{ $page.post.price }}</span>
-            </div>
           </div>
         </div>
         <div v-html="$page.post.content" class="content"/>
@@ -38,7 +33,6 @@
 query ($path: String!) {
   post: productPost (path: $path) {
     title
-    price
     date (format: "YYYY")
     content
     categories

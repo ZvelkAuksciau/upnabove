@@ -22,7 +22,6 @@
         id
         date (format: "YYYY MM DD")
         title
-        price
         categories
         thumbnail (quality: 90)
         cover

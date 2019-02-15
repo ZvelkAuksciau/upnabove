@@ -1,7 +1,6 @@
 ---
 categories:
 - UAV
-price: 800
 thumbnail: "/uploads/Suopis2.png"
 cover: false
 title: Suopis
