@@ -3,9 +3,6 @@ label: Product
 hide_body: false
 is_partial: false
 fields:
-- type: number
-  name: price
-  label: Price
 - type: include
   name: product
   label: Product
