@@ -14,11 +14,23 @@
     <div class="sender-info">
       <div class="row">
         <label for="name" class="label">Your name</label>
-        <input type="text" name="name" v-validate="'required|alpha'" v-model="form.name" :disabled="this.loading">
+        <input
+          type="text"
+          name="name"
+          v-validate="'required|alpha'"
+          v-model="form.name"
+          :disabled="this.loading"
+        >
       </div>
       <div class="row">
         <label for="email" class="label">Your email</label>
-        <input type="email" name="email" v-validate="'required|email'" v-model="form.email" :disabled="this.loading">
+        <input
+          type="email"
+          name="email"
+          v-validate="'required|email'"
+          v-model="form.email"
+          :disabled="this.loading"
+        >
       </div>
     </div>
 
@@ -33,7 +45,6 @@
       ref="submitButton"
       :disabled="this.loading"
     >{{ buttonText }}</button>
-
   </form>
 </template>
 
@@ -54,18 +65,18 @@ export default {
   computed: {
     buttonText() {
       if (this.loading) {
-        return "Sending..."
+        return "Sending...";
       }
 
       if (this.success) {
-        return "Success!"
+        return "Success!";
       }
 
       if (this.error) {
-        return "Error"
+        return "Error";
       }
 
-      return "Send"
+      return "Send";
     }
   },
   props: {
@@ -84,6 +95,10 @@ export default {
     },
     handleSubmit() {
       this.loading = true;
+
+      this.$validator.validateAll().then(valid => {
+        console.log(valid);
+      });
 
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
@@ -105,8 +120,8 @@ export default {
           console.log(res);
 
           setTimeout(() => {
-            this.success = false
-          }, 2000)
+            this.success = false;
+          }, 2000);
         })
         .catch(err => {
           this.loading = false;
@@ -115,8 +130,8 @@ export default {
           console.log(err);
 
           setTimeout(() => {
-            this.error = false
-          }, 2000)
+            this.error = false;
+          }, 2000);
         });
     }
   }
@@ -136,7 +151,7 @@ textarea {
   font-size: 1rem;
   width: 100%;
 
-  &.touched.invalid {
+  &.invalid {
     border-color: var(--color-error);
   }
 }

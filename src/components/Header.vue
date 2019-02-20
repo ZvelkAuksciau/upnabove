@@ -4,6 +4,7 @@
       <div>
         <g-link :to="{ name: 'home' }" class="home-link">
           <img src="/logo.svg" :alt="$static.data.siteName" class="logo">
+          <span class="home-link__text">Home</span>
         </g-link>
       </div>
       <nav class="nav">
@@ -85,6 +86,10 @@
   }
 }
 
+.home-link__text {
+  display: none;
+}
+
 @include small {
   .header {
     padding: 0 1rem;
@@ -106,6 +111,19 @@
 
   .nav__link {
     margin-right: 2rem;
+  }
+
+  .home-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &__text {
+      display: block;
+      margin-left: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
   }
 
   .logo,
