@@ -1,4 +1,5 @@
 <template>
+  import { setTimeout } from 'timers';
   <form
     class="contact-form"
     :class="{ loading: loading, success: success, error: error }"
@@ -94,45 +95,51 @@ export default {
         .join("&");
     },
     handleSubmit() {
-      this.loading = true;
-
       this.$validator.validateAll().then(valid => {
-        console.log(valid);
-      });
+        if (valid) {
+          this.loading = true;
 
-      const axiosConfig = {
-        header: { "Content-Type": "application/x-www-form-urlencoded" }
-      };
-      this.$axios
-        .post(
-          "/",
-          this.encode({
-            "form-name": "contact",
-            page: this.pageTitle,
-            ...this.form
-          }),
-          axiosConfig
-        )
-        .then(res => {
-          this.loading = false;
-          this.success = true;
+          const axiosConfig = {
+            header: { "Content-Type": "application/x-www-form-urlencoded" }
+          };
+          this.$axios
+            .post(
+              "/",
+              this.encode({
+                "form-name": "contact",
+                page: this.pageTitle,
+                ...this.form
+              }),
+              axiosConfig
+            )
+            .then(res => {
+              this.loading = false;
+              this.success = true;
 
-          console.log(res);
+              console.log(res);
 
-          setTimeout(() => {
-            this.success = false;
-          }, 2000);
-        })
-        .catch(err => {
-          this.loading = false;
+              setTimeout(() => {
+                this.success = false;
+              }, 2000);
+            })
+            .catch(err => {
+              this.loading = false;
+              this.error = true;
+
+              console.log(err);
+
+              setTimeout(() => {
+                this.error = false;
+              }, 2000);
+            });
+        } else {
           this.error = true;
-
-          console.log(err);
 
           setTimeout(() => {
             this.error = false;
           }, 2000);
-        });
+        }
+      });
     }
   }
 };
