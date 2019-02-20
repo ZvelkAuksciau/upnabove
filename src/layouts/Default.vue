@@ -32,8 +32,8 @@ body {
   --color-error: rgb(239, 63, 55);
   --color-success: rgb(76, 175, 80);
 
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", -apple-system, system-ui, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -49,8 +49,10 @@ body.dark {
   --color-contrast-1: rgb(243, 243, 243);
 }
 
-h1 {
-  letter-spacing: -0.01em;
+textarea,
+input,
+button {
+  font-family: inherit;
 }
 
 .layout {
