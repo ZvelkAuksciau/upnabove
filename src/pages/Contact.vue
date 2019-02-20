@@ -8,17 +8,33 @@
 
       <ContactForm :pageTitle="$metaInfo.title"/>
 
-      <ClientOnly>
-        <GmapMap
-          :center="{lat:54.6547269, lng:25.106417}"
-          :zoom="11"
-          map-type-id="terrain"
-          style="height: 400px"
-          :options="{styles: mapStyle, mapTypeControl: false, streetViewControl: false, fullscreenControl: false}"
-        >
-          <GmapMarker :position="{lat:54.6547269, lng:25.106417}" :clickable="true" @click="openMaps"/>
-        </GmapMap>
-      </ClientOnly>
+      <div class="contacts">
+        <ClientOnly>
+          <GmapMap
+            :center="{lat:54.6547269, lng:25.106417}"
+            :zoom="11"
+            map-type-id="terrain"
+            class="contact-map"
+            :options="{styles: mapStyle, mapTypeControl: false, streetViewControl: false, fullscreenControl: false}"
+          >
+            <GmapMarker
+              :position="{lat:54.6547269, lng:25.106417}"
+              :clickable="true"
+              @click="openMaps"
+            />
+          </GmapMap>
+        </ClientOnly>
+
+        <div class="contact-details">
+          <div class="contact-details__row">Kirtimų g. 33, Vilnius, Lithuania</div>
+          <div class="contact-details__row">
+            <a href="mailto:dobr@kmti.lt">dobr@kmti.lt</a>
+          </div>
+          <div class="contact-details__row">
+            <a href="tel:+37000000000">+37000000000</a>
+          </div>
+        </div>
+      </div>
     </div>
   </Layout>
 </template>
@@ -228,12 +244,54 @@ export default {
   },
   methods: {
     openMaps() {
-      window.location.href = "https://www.google.com/maps/search/?api=1&query=Kirtimų+g.+33,+Vilnius+02300"
+      window.location.href =
+        "https://www.google.com/maps/search/?api=1&query=Kirtimų+g.+33,+Vilnius+02300";
     }
   }
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "~/assets/scss/variables.scss";
+@import "~/assets/scss/mixins.scss";
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-map {
+  height: 400px;
+}
+
+.contact-details {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.68rem;
+  font-size: 1.15rem;
+  font-weight: 400;
+  opacity: 0.6;
+  text-align: center;
+
+  &__row {
+    margin: 10px 0;
+  }
+}
+
+@include small {
+  .contacts {
+    flex-direction: row;
+  }
+  .contact-map {
+    width: 50%;
+  }
+
+  .contact-details {
+    width: 50%;
+  }
+}
 </style>
 
