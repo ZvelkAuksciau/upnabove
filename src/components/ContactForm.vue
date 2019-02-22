@@ -1,5 +1,4 @@
 <template>
-  import { setTimeout } from 'timers';
   <form
     class="contact-form"
     :class="{ loading: loading, success: success, error: error }"
