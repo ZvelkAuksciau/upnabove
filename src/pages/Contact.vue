@@ -26,12 +26,12 @@
         </ClientOnly>
 
         <div class="contact-details">
-          <div class="contact-details__row">Kirtimų g. 33, Vilnius, Lithuania</div>
+          <div class="contact-details__row">{{ $page.data.address }}</div>
           <div class="contact-details__row">
-            <a href="mailto:dobr@kmti.lt">dobr@kmti.lt</a>
+            <a :href="`mailto:${$page.data.email}`">{{ $page.data.email }}</a>
           </div>
           <div class="contact-details__row">
-            <a href="tel:+37000000000">+37000000000</a>
+            <a :href="`tel:${$page.data.phone}`">{{ $page.data.phone }}</a>
           </div>
         </div>
       </div>
@@ -44,6 +44,9 @@
   data(path:"/data/contact-page") {
     heroTitle
     heroSubtitle
+    address
+    email
+    phone
   }
 }
 </page-query>

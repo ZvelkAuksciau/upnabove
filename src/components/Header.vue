@@ -34,7 +34,7 @@
   left: 0;
   width: 100%;
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(2px);
 
   .container {
@@ -94,8 +94,6 @@
   .header {
     padding: 0 1rem;
     height: 6rem;
-    background-color: initial;
-    backdrop-filter: initial;
 
     .container {
       flex-direction: row;
