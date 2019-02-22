@@ -7,5 +7,14 @@ fields:
   label: Hero
   name: hero
   template: hero
+- type: text
+  name: address
+  label: Address
+- type: text
+  label: Email
+  name: email
+- type: text
+  name: phone
+  label: Phone
 pages:
 - data/contact-page.json
