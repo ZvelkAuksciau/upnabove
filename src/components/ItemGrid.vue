@@ -119,7 +119,7 @@ query ColorPool {
   margin: 0;
 }
 
-.project:hover .thumbnail {
+.item:hover .thumbnail {
   transform: scale(1.05);
 }
 
