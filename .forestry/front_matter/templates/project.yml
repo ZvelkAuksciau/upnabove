@@ -37,6 +37,6 @@ fields:
     color_format: Hex
   label: Foreground color
 pages:
-- projects/death-star.md
-- projects/suopis-4.md
 - projects/suopis-5.md
+- projects/suopis-4.md
+- projects/death-star.md
