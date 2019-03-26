@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <video src="/clouds.mp4" class="background" type="video/mp4" autoplay muted loop playsinline></video>
     <div class="container">
       <Hero>
         <template slot="title">{{ $page.data.heroTitle }}</template>
@@ -86,3 +87,16 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.5;
+}
+</style>
