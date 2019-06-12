@@ -9,7 +9,6 @@ fg_color: ''
 cover: false
 
 ---
-
 Bepilotis orlaivis skirtas stebėjimo užduotims atlikti
 
 Sparno mojis - 1,6 m;
@@ -26,7 +25,13 @@ Kreiserinis greitis - 60 km/h;
 
 Leistinas vėjas - iki 10 m/s.
 
+![](/uploads/IMG_0527.JPG)
+
 ![](/uploads/IMG_0525.JPG)
+
+![](/uploads/IMG_0608.JPG)
+
+![](/uploads/IMG_0565.JPG)
 
 | --- | --- |
 | Sparno mojis | 1,6 m |
