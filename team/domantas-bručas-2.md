@@ -1,6 +1,6 @@
 ---
-title: Domantas Bručas
-image: "/uploads/36217_137772176234451_3380022_n.jpg"
-date: 2019-02-08 17:15:30 +0200
+title: Martynas Butkus
+image: ''
+date: '2019-02-08T15:15:30.000+00:00'
 
 ---
