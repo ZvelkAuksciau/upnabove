@@ -1,7 +1,6 @@
 ---
 label: Hero
 hide_body: false
-is_partial: true
 display_field: hero_title
 fields:
 - type: text

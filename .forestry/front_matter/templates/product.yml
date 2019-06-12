@@ -1,13 +1,12 @@
 ---
 label: Product
 hide_body: false
-is_partial: false
 fields:
 - type: include
   name: product
   label: Product
   template: project
 pages:
+- products/suopis.md
 - products/rambynas.md
 - products/rambynas-2.md
-- products/suopis.md
