@@ -1,20 +1,15 @@
 ---
 categories:
 - none
-thumbnail: "/uploads/Death-Star-I-copy_36ad2500.jpeg"
-cover: true
-title: Death Star
-date: 2019-02-01 00:00:00 +0200
+thumbnail: "/uploads/IMG_1395.JPG"
+cover: false
+title: 40 kg daugiasraigtis orlaivis
+date: 2019-01-31T22:00:00.000+00:00
 bg_color: ''
 fg_color: ''
 
 ---
-![](/uploads/Death-Star-I-copy_36ad2500.jpeg)
 
-The **International Space Station** (**ISS**) is a [space station](https://www.wikiwand.com/en/Space_station "Space station"), or a habitable [artificial satellite](https://www.wikiwand.com/en/Satellite), in [low Earth orbit](https://www.wikiwand.com/en/Low_Earth_orbit "Low Earth orbit"). Its first component was launched into orbit in 1998, with the first long-term residents arriving in November 2000.
+40 kg daugiasraigitis orlaivis skirtas laivų aptikimo radaro sistemai nešti.
 
-## Purpose
-
-According to the original [Memorandum of Understanding](https://www.wikiwand.com/en/Memorandum_of_Understanding "Memorandum of Understanding") between NASA and Rosaviakosmos, the International Space Station was intended to be a laboratory, observatory and factory in [low Earth orbit](https://www.wikiwand.com/en/Low_Earth_orbit). It was also planned to provide transportation, maintenance, and act as a staging base for possible future missions to the Moon, Mars and asteroids.
-
-<iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/lJIrF4YjHfQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![](/uploads/ezgif.com-video-to-gif.gif)
