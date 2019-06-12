@@ -1,6 +1,6 @@
 ---
-title: Bananas Bananauskas
-image: "/uploads/mike-dorner-173502-unsplash.jpg"
-date: 2019-02-07 16:41:28 +0200
+title: Domantas Bručas
+image: ''
+date: '2019-02-07T14:41:28.000+00:00'
 
 ---
