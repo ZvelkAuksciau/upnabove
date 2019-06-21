@@ -9,6 +9,6 @@ bg_color: ''
 fg_color: ''
 
 ---
-40 kg daugiasraigitis orlaivis skirtas laivų aptikimo radaro sistemai nešti.
+#### 40 kg daugiasraigitis orlaivis skirtas laivų aptikimo radaro sistemai nešti.
 
 ![](/uploads/ezgif.com-video-to-gif.gif)
