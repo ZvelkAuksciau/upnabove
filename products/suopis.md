@@ -2,7 +2,7 @@
 categories:
 - UAV
 thumbnail: "/uploads/grey.png"
-cover: false
+cover: true
 title: Suopis
 date: '2019-01-15T22:00:00.000+00:00'
 bg_color: "#D2D2D2"
