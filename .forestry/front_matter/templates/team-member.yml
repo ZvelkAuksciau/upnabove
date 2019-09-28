@@ -12,8 +12,8 @@ fields:
   label: Image
   default: "/uploads/765-default-avatar.png"
 pages:
+- team/domantas-bručas-1.md
+- team/domantas-bručas.md
 - team/domantas-bručas-2.md
 - team/domantas-bručas-3.md
 - team/bananas-bananauskas.md
-- team/domantas-bručas.md
-- team/domantas-bručas-1.md
