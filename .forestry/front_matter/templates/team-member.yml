@@ -10,6 +10,7 @@ fields:
 - type: file
   name: image
   label: Image
+  default: "/uploads/765-default-avatar.png"
 pages:
 - team/bananas-bananauskas.md
 - team/domantas-bručas.md
