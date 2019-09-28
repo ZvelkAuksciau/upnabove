@@ -4,7 +4,7 @@ categories:
 thumbnail: "/uploads/IMG_1395.JPG"
 cover: true
 title: 40 kg daugiasraigtis orlaivis
-date: 2019-02-01 00:00:00 +0200
+date: 2019-02-02T00:00:00.000+02:00
 bg_color: ''
 fg_color: ''
 
