@@ -4,7 +4,7 @@ categories:
 thumbnail: "/uploads/grey.png"
 cover: true
 title: Suopis
-date: 2019-01-15T00:00:00.000+02:00
+date: 2019-01-11T00:00:00.000+02:00
 bg_color: "#D2D2D2"
 fg_color: "#FF3D3D"
 
