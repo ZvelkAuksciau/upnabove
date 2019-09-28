@@ -1,7 +1,7 @@
 ---
 categories:
 - none
-thumbnail: "/uploads/Surinkimas_spartan3.jpg"
+thumbnail: "/uploads/765-default-avatar.png"
 title: Spartan
 date: 2019-01-08T00:00:00.000+02:00
 bg_color: ''
