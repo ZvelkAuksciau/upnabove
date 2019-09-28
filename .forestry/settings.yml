@@ -52,7 +52,7 @@ build:
   preview_output_directory: dist
   preview_docker_image: forestryio/build:latest
   mount_path: "/opt/buildhome/repo"
-  instant_preview_command: vuepress dev -p 8080 -h 0.0.0.0
+  instant_preview_command: npm run develop
   publish_command: gridsome build
   output_directory: dist
   preview_command: gridsome build
