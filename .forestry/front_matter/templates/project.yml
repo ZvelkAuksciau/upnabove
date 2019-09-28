@@ -19,6 +19,8 @@ fields:
   label: Date
   config:
     required: true
+    date_format: YYYY-MM-DD
+    time_format: kk:mm Z
 - type: tag_list
   name: categories
   label: Categories
