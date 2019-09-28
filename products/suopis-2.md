@@ -3,7 +3,7 @@ categories:
 - UAV
 thumbnail: "/uploads/Suopis2.png"
 title: Suopis-2
-date: '2019-02-04T10:00:00.000+00:00'
+date: 2019-02-05T12:00:00.000+02:00
 bg_color: ''
 fg_color: ''
 cover: false
