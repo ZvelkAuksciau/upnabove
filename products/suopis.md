@@ -1,13 +1,12 @@
 ---
 categories:
-- UAV
+  - UAV
 thumbnail: "/uploads/grey.png"
-cover: true
+cover: false
 title: Suopis
 date: 2019-01-11T00:00:00.000+02:00
-bg_color: "#D2D2D2"
-fg_color: "#FF3D3D"
-
+bg_color: ""
+fg_color: ""
 ---
 
 ### Suopis
