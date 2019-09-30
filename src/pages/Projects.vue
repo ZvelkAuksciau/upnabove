@@ -5,7 +5,7 @@
         <template slot="title">{{ $page.data.heroTitle }}</template>
         <template slot="subtitle">{{ $page.data.heroSubtitle }}</template>
       </Hero>
-      <ItemGrid :items="$page.projects.edges"/>
+      <ItemGrid :items="$page.projects.edges" />
     </div>
   </Layout>
 </template>
@@ -13,8 +13,8 @@
 <page-query>
 {
   data(path:"/data/project-page") {
-    heroTitle
-    heroSubtitle
+    hero_title
+    hero_subtitle
   }
 	projects: allProjectPost {
     edges {

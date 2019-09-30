@@ -1,5 +1,7 @@
 <template>
-  <form
+  <ValidationObserver
+    tag="form"
+    ref="validationObserver"
     class="contact-form"
     :class="{ loading: loading, success: success, error: error }"
     name="contact"
@@ -9,47 +11,63 @@
     data-netlify="true"
   >
     <div class="hidden">
-      <input name="bot-field">
+      <input name="bot-field" />
     </div>
     <div class="sender-info">
       <div class="row">
         <label for="name" class="label">Your name</label>
-        <input
-          type="text"
-          name="name"
-          v-validate="'required|alpha'"
-          v-model="form.name"
-          :disabled="this.loading"
-        >
+        <ValidationProvider rules="required|alpha_spaces" v-slot="{ classes }">
+          <input
+            type="text"
+            name="name"
+            v-model="form.name"
+            :class="classes"
+            :disabled="loading"
+          />
+        </ValidationProvider>
       </div>
       <div class="row">
         <label for="email" class="label">Your email</label>
-        <input
-          type="email"
-          name="email"
-          v-validate="'required|email'"
-          v-model="form.email"
-          :disabled="this.loading"
-        >
+        <ValidationProvider rules="required|email" v-slot="{ classes }">
+          <input
+            type="email"
+            name="email"
+            v-model="form.email"
+            :class="classes"
+            :disabled="loading"
+          />
+        </ValidationProvider>
       </div>
     </div>
 
     <div class="message">
       <label for="message" class="label">Message</label>
-      <textarea name="message" v-model="form.message" :disabled="this.loading"></textarea>
+      <textarea
+        name="message"
+        v-model="form.message"
+        :disabled="loading"
+      ></textarea>
     </div>
 
-    <button
-      class="button"
-      type="submit"
-      ref="submitButton"
-      :disabled="this.loading"
-    >{{ buttonText }}</button>
-  </form>
+    <button class="button" type="submit" ref="submitButton" :disabled="loading">
+      {{ buttonText }}
+    </button>
+  </ValidationObserver>
 </template>
 
 <script>
+import { ValidationProvider, ValidationObserver, extend } from "vee-validate";
+import { required, email, alpha_spaces } from "vee-validate/dist/rules";
+
+extend("required", required);
+extend("email", email);
+extend("alpha_spaces", alpha_spaces);
+
 export default {
+  components: {
+    ValidationProvider,
+    ValidationObserver
+  },
   data() {
     return {
       form: {
@@ -93,52 +111,54 @@ export default {
         )
         .join("&");
     },
-    handleSubmit() {
-      this.$validator.validateAll().then(valid => {
-        if (valid) {
-          this.loading = true;
+    async handleSubmit() {
+      const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" }
+      };
 
-          const axiosConfig = {
-            header: { "Content-Type": "application/x-www-form-urlencoded" }
-          };
-          this.$axios
-            .post(
-              "/",
-              this.encode({
-                "form-name": "contact",
-                page: this.pageTitle,
-                ...this.form
-              }),
-              axiosConfig
-            )
-            .then(res => {
-              this.loading = false;
-              this.success = true;
+      const formValid = await this.$refs.validationObserver.validate();
 
-              console.log(res);
+      if (!formValid) {
+        this.error = true;
 
-              setTimeout(() => {
-                this.success = false;
-              }, 2000);
-            })
-            .catch(err => {
-              this.loading = false;
-              this.error = true;
+        setTimeout(() => {
+          this.error = false;
+        }, 2000);
 
-              console.log(err);
+        return;
+      }
 
-              setTimeout(() => {
-                this.error = false;
-              }, 2000);
-            });
-        } else {
-          this.error = true;
+      try {
+        this.loading = true;
 
-          setTimeout(() => {
-            this.error = false;
-          }, 2000);
-        }
-      });
+        const res = await this.$axios.post(
+          "/",
+          this.encode({
+            "form-name": "contact",
+            page: this.pageTitle,
+            ...this.form
+          }),
+          axiosConfig
+        );
+
+        this.loading = false;
+        this.success = true;
+
+        console.log(res);
+
+        setTimeout(() => {
+          this.success = false;
+        }, 2000);
+      } catch (err) {
+        this.loading = false;
+        this.error = true;
+
+        console.error(err);
+
+        setTimeout(() => {
+          this.error = false;
+        }, 2000);
+      }
     }
   }
 };
@@ -223,10 +243,6 @@ textarea:focus {
 
 .button:hover {
   opacity: 0.6;
-}
-
-.button:focus {
-  border: 1px solid var(--color-base-1);
 }
 
 @media (min-width: 920px) {

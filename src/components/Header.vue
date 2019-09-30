@@ -2,15 +2,15 @@
   <header class="header">
     <div class="container">
       <div>
-        <g-link :to="{ name: 'home' }" class="home-link">
-          <img src="/logo.svg" :alt="$static.data.siteName" class="logo">
+        <g-link to="/" class="home-link">
+          <img src="/logo.svg" :alt="$static.data.siteName" class="logo" />
           <span class="home-link__text">Home</span>
         </g-link>
       </div>
       <nav class="nav">
-        <g-link class="nav__link" :to="{ name: 'products' }">Products</g-link>
-        <g-link class="nav__link" :to="{ name: 'projects' }">Projects</g-link>
-        <g-link class="nav__link" :to="{ name: 'contact' }">Contact</g-link>
+        <g-link class="nav__link" to="/products/">Products</g-link>
+        <g-link class="nav__link" to="/projects/">Projects</g-link>
+        <g-link class="nav__link" to="/contact/">Contact</g-link>
       </nav>
     </div>
   </header>

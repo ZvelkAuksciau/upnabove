@@ -1,16 +1,26 @@
 <template>
   <Layout>
-    <video src="/clouds.mp4" class="background" type="video/mp4" autoplay muted loop playsinline></video>
+    <video
+      src="/clouds.mp4"
+      class="background"
+      type="video/mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+    ></video>
     <div class="container">
       <Hero>
         <template slot="title">{{ $page.data.heroTitle }}</template>
         <template slot="subtitle">{{ $page.data.heroSubtitle }}</template>
       </Hero>
-      <ItemGrid :items="posts"/>
+      <ItemGrid :items="posts" />
       <Hero>
-        <template slot="title">Team</template>
+        <template slot="title">
+          Team
+        </template>
       </Hero>
-      <BlobGrid :items="$page.team.edges"/>
+      <BlobGrid :items="$page.team.edges" />
     </div>
   </Layout>
 </template>
@@ -18,9 +28,9 @@
 <page-query>
 {
   data(path:"/data/homepage") {
-    heroTitle
-    heroSubtitle
-    numberOfPosts
+    hero_title
+    hero_subtitle
+    number_of_posts
   }
   projects: allProjectPost(perPage: 6) {
     edges {
@@ -88,7 +98,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .background {
   position: fixed;
   top: 0;

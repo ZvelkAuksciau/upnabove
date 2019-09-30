@@ -5,14 +5,19 @@
         <div class="project-header">
           <h1 class="project-title">{{ $page.post.title }}</h1>
           <div class="project-info">
-            <div v-if="$page.post.categories[0] != 'none'" class="categories-container">
+            <div
+              v-if="$page.post.categories[0] != 'none'"
+              class="categories-container"
+            >
               <div class="categories">
                 <span class="label">Categories</span>
                 <span
                   class="category"
                   v-for="(category, index) in $page.post.categories"
                   :key="index"
-                >{{ category }}</span>
+                >
+                  {{ category }}
+                </span>
               </div>
             </div>
 
@@ -22,7 +27,7 @@
             </div>
           </div>
         </div>
-        <div v-html="$page.post.content" class="content"/>
+        <div v-html="$page.post.content" class="content" />
       </div>
     </div>
   </Layout>
@@ -35,8 +40,8 @@ query ($path: String!) {
     date (format: "YYYY")
     content
     categories
-    bgColor
-    fgColor
+    bg_color
+    fg_color
   }
 }
 </page-query>

@@ -5,7 +5,7 @@
         <template slot="title">{{ $page.data.heroTitle }}</template>
         <template slot="subtitle">{{ $page.data.heroSubtitle }}</template>
       </Hero>
-      <ItemGrid :items="$page.products.edges"/>
+      <ItemGrid :items="$page.products.edges" />
     </div>
   </Layout>
 </template>
@@ -13,8 +13,8 @@
 <page-query>
 {
   data(path:"/data/product-page") {
-    heroTitle
-    heroSubtitle
+    hero_title
+    hero_subtitle
   }
 	products: allProductPost {
     edges {
@@ -45,6 +45,7 @@ export default {
   components: {
     Hero,
     ItemGrid
-  }
+  },
+  name: "products"
 };
 </script>

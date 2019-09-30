@@ -24,7 +24,9 @@
             class="category"
             v-for="(category, index) in item.node.categories"
             :key="index"
-          >{{ category }}</span>
+          >
+            {{ category }}
+          </span>
         </div>
       </g-link>
     </div>

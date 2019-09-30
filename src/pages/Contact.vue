@@ -6,19 +6,24 @@
         <template slot="subtitle">{{ $page.data.heroSubtitle }}</template>
       </Hero>
 
-      <ContactForm :pageTitle="$metaInfo.title"/>
+      <ContactForm :pageTitle="$metaInfo.title" />
 
       <div class="contacts">
         <ClientOnly>
           <GmapMap
-            :center="{lat:54.6547269, lng:25.106417}"
+            :center="{ lat: 54.6547269, lng: 25.106417 }"
             :zoom="11"
             map-type-id="terrain"
             class="contact-map"
-            :options="{styles: mapStyle, mapTypeControl: false, streetViewControl: false, fullscreenControl: false}"
+            :options="{
+              styles: mapStyle,
+              mapTypeControl: false,
+              streetViewControl: false,
+              fullscreenControl: false
+            }"
           >
             <GmapMarker
-              :position="{lat:54.6547269, lng:25.106417}"
+              :position="{ lat: 54.6547269, lng: 25.106417 }"
               :clickable="true"
               @click="openMaps"
             />
@@ -42,8 +47,8 @@
 <page-query>
 {
   data(path:"/data/contact-page") {
-    heroTitle
-    heroSubtitle
+    hero_title
+    hero_subtitle
     address
     email
     phone
