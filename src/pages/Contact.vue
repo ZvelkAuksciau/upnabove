@@ -11,7 +11,7 @@
       <div class="contacts">
         <ClientOnly>
           <GmapMap
-            :center="{ lat: 54.6547269, lng: 25.106417 }"
+            :center="{ lat: 54.6273974, lng: 25.1471061 }"
             :zoom="11"
             map-type-id="terrain"
             class="contact-map"
@@ -23,7 +23,7 @@
             }"
           >
             <GmapMarker
-              :position="{ lat: 54.6547269, lng: 25.106417 }"
+              :position="{ lat: 54.6273974, lng: 25.1471061 }"
               :clickable="true"
               @click="openMaps"
             />
