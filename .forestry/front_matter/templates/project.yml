@@ -39,6 +39,7 @@ fields:
     color_format: Hex
   label: Foreground color
 pages:
+- projects/test.md
 - projects/40-kg-daugiasraigtis-orlaivis.md
 - projects/suopis-5.md
 - projects/suopis-4.md
