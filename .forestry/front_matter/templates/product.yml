@@ -8,5 +8,5 @@ fields:
   template: project
 pages:
 - products/spartan.md
-- products/suopis-2.md
 - products/suopis.md
+- products/suopis-2.md
