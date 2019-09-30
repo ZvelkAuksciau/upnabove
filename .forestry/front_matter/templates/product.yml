@@ -7,7 +7,7 @@ fields:
   label: Product
   template: project
 pages:
+- products/suopis-2.md
 - products/spartan.md
 - products/suopis.md
-- products/suopis-2.md
 - products/test.md
